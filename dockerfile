@@ -1,5 +1,5 @@
-FROM ubuntu
+FROM nginx
 RUN apt-get update
 RUN apt-get install ubuntu -y
 EXPOSE 80
-CMD ["ubuntu", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]
