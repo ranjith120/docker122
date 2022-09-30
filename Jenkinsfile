@@ -1,4 +1,10 @@
 pipeline {
+  agent {
+   node {
+      label 'docker-agent-6.2.2-2'
+    }
+  }
+
   environment {
     // DEV Env
     AZURE_VM01 = "${env.AZURE_CITI_VM01}"
