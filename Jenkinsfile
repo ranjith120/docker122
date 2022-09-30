@@ -1,7 +1,7 @@
 pipeline {
   agent {
    node {
-      label 'docker-agent-6.2.2-2'
+      label 'Chaps1'
     }
   }
 
@@ -43,11 +43,11 @@ pipeline {
         sh 'printenv | sort'
         script {
           /* Check the GIT_BRANCH to compute the target environment */
-          if (env.GIT_BRANCH == 'origin/chaps-citi' &&  DEPLOY_TO_ENVIRONMENT=='DEV') {
+          if (env.GIT_BRANCH == 'origin/main' &&  DEPLOY_TO_ENVIRONMENT=='DEV') {
             target = 'dev'
-          } else if (env.GIT_BRANCH == 'origin/chaps-citi' &&  DEPLOY_TO_ENVIRONMENT=='QA') {
+          } else if (env.GIT_BRANCH == 'origin/main' &&  DEPLOY_TO_ENVIRONMENT=='QA') {
             target = 'qa'
-          } else if (env.GIT_BRANCH == 'origin/chaps-citi' &&  DEPLOY_TO_ENVIRONMENT=='OPENSHIFT') {
+          } else if (env.GIT_BRANCH == 'origin/main' &&  DEPLOY_TO_ENVIRONMENT=='OPENSHIFT') {
             target = 'pre'
           }
           /* Create the real version with Jenkins BUILD_NUMBER */
