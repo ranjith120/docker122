@@ -1,7 +1,7 @@
 pipeline {
   agent {
    node {
-      label 'docker-agent-6.2.2-2'
+      label 'docker-agent-6.4.2-3'
     }
   }
 
